@@ -17,21 +17,23 @@ The interaction with the system takes places through class `Control` which can b
 The name can be retrieved using the getter `getName()`.
 
 
-It is possible to define a new Network by means of the method `createBuilding()` which accepts the alphanumeric code, name (ex: "Sede Centrale", "Cittadella") and description.
+It is possible to define a new building by means of the method `createBuilding()` which accepts the alphanumeric code, name (ex: "Sede Centrale", "Cittadella") and description.
 In case of duplicate code the method throws an exception.
 
-The methods `getCode()` and `getName()` return the code and the name of the network respectively.
+The methods `getCode()` and `getName()` of the class Building return the code and the name of the building respectively.
 
-The methods 'getNetworks()' returns all the networks. 
+This class also implements `getBuildings()` that returns all the buildings, and it's possible to update and delete buildings with the methods `updateBuilding()` and `deleteBuilding()` of the class `Control`
 
 R2 - Area
 ----------
 
-The definition of a new lift is carried on by method `createLift()` which accepts the name and lift type.
-If the provided type has not been defined an exception is thrown.
+Every Area represents a group of rooms, for example the groups defined by different letters (R,I,T,M,N...)
+The definition of a new area is carried on by method `createArea()` which accepts the building code, the area code, the room groups and a brief description.
 
-The method `getType()` returns the type of the given lift.
-Method `getLifts()` returns the collection of lifts sorted by name.
+The method `getRoomsGroup()` returns the name of the group of classrooms that defines the area.
+Method `getAreas()` returns all the areas of the building.
+
+It is also possible to update or delete an area by the methods `updateArea()` or `deleteArea()` of the class `Building` 
 
 
 R3 - SensorRoom

@@ -1,4 +1,4 @@
-package it.polito.ski;
+package it.polito.temperatureControl;
 
 public class Parking {
     private String name;

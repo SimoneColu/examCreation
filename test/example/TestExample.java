@@ -10,14 +10,14 @@ import java.util.Collection;
 
 import org.junit.Test;
 
-import it.polito.ski.InvalidLiftException;
-import it.polito.ski.SkiArea;
+import it.polito.temperatureControl.InvalidException;
+import it.polito.temperatureControl.SkiArea;
 
 
 public class TestExample {
 
     @Test
-    public void testAll() throws InvalidLiftException, IOException {
+    public void testAll() throws InvalidException, IOException {
         
         SkiArea vl = new SkiArea("Via Lattea");
         

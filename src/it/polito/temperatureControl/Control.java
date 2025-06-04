@@ -1,4 +1,4 @@
-package it.polito.ski;
+package it.polito.temperatureControl;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,50 +11,24 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class SkiArea {
+public class Control {
 
-	private String name;
-	Map<String,LiftType> liftTypeMap = new HashMap<>();
-	Map<String,Lift> liftMap = new HashMap<>();
-	Map<String,Slope> slopesMap = new HashMap<>();
-	Map<String,Parking> parkingMap = new HashMap<>();
-	Map<String,List<String>> liftServedByParking = new HashMap<>(); //parking name, lift list names
-	Map<String,String> prova = new HashMap<>(); //lift,parking
-	Map<String,Integer> parkPerLift = new HashMap<>();
+
 	/**
-	 * Creates a new ski area
-	 * @param name name of the new ski area
+	 * Creates a new building
+	 * @param name name of the new building
 	 */
-	public SkiArea(String name) {
-		this.name = name;
+	public Control(String name) {
+		
     }
 
 	/**
-	 * Retrieves the name of the ski area
+	 * Retrieves the name of the building
 	 * @return name
 	 */
 	public String getName() { 
-		return name;
+		return null;
 	}
-
-    /**
-     * define a new lift type providing the code, the category (Cable Cabin, Chair, Ski-lift)
-     * and the capacity (number of skiers carried) of a single unit
-     * 
-     * @param code		name of the new type
-     * @param category	category of the lift
-     * @param capacity	number of skiers per unit
-     * @throws InvalidLiftException in case of duplicate code or if the capacity is <= 0
-     */
-    public void liftType(String code, String category, int capacity) throws InvalidLiftException {
-		LiftType lt = new LiftType(code, category, capacity);
-		if(liftTypeMap.containsKey(code)){
-			throw new InvalidLiftException();
-		}
-		else{
-			liftTypeMap.put(code,lt);
-		}
-    }
     
     /**
      * retrieves the category of a given lift type code
@@ -62,13 +36,8 @@ public class SkiArea {
      * @return the category of the type
      * @throws InvalidLiftException if the code has not been defined
      */
-    public String getCategory(String typeCode) throws InvalidLiftException {
-		if(!liftTypeMap.containsKey(typeCode)){
-			throw new InvalidLiftException();
-		}
-		else {
-			return liftTypeMap.get(typeCode).getCategory();
-		}
+    public Building createBuilding(String code, String name, String description) throws InvalidException {
+		return null;
     }
 
     /**
@@ -77,14 +46,23 @@ public class SkiArea {
      * @return the capacity of the type
      * @throws InvalidLiftException if the code has not been defined
      */
-    public int getCapacity(String typeCode) throws InvalidLiftException {
-        if(!liftTypeMap.containsKey(typeCode)){
-			throw new InvalidLiftException();
-		}
-		else {
-			return liftTypeMap.get(typeCode).getCapacity();
-		}
+    public Collection<Building> getBuildings() throws InvalidException {
+		return null;
     }
+
+
+	public void updateBuilding(String buildingCode) {
+		
+	}
+
+	public void deleteBuilding(String buildingCode) {
+
+	}
+
+
+
+
+
 
 
     /**
@@ -92,7 +70,7 @@ public class SkiArea {
      * @return the list of codes
      */
 	public Collection<String> types() {
-		return liftTypeMap.keySet();
+		return null;
 	}
 	
 	/**
@@ -103,15 +81,7 @@ public class SkiArea {
 	 * @throws InvalidLiftException in case the lift type is not defined
 	 */
     public void createLift(String name, String typeCode) throws InvalidLiftException{
-		Lift l;
-		if(!liftTypeMap.containsKey(typeCode)){
-			throw new InvalidLiftException();
-		}
-		else {
-			l = new Lift(name, liftTypeMap.get(typeCode));
-			liftMap.put(name,l);
-		}
-		
+
     }
     
 	/**
@@ -120,7 +90,7 @@ public class SkiArea {
 	 * @return type of the lift
 	 */
 	public String getType(String lift) {
-		return liftMap.get(lift).getType().getCode();
+		return null;
 	}
 
 	/**
@@ -128,12 +98,8 @@ public class SkiArea {
 	 * @return the list of names sorted alphabetically
 	 */
 	public List<String> getLifts(){
-		List<String> l =
-			liftMap.entrySet().stream()	
-				.map(e->e.getKey())
-				.sorted()
-				.toList();
-		return l;
+		
+		return null;
     }	
 
 	/**
@@ -144,13 +110,13 @@ public class SkiArea {
 	 * @throws InvalidLiftException in case the lift has not been defined
 	 */
     public void createSlope(String name, String difficulty, String lift) throws InvalidLiftException {
-		Slope s;
+		Area s;
 		if(!liftMap.containsKey(lift)){
 			throw new InvalidLiftException();
 		}
 
 		else{
-			s = new Slope(name, difficulty, lift);
+			s = new Area(name, difficulty, lift);
 			slopesMap.put(name,s);
 		}
 			
