@@ -98,5 +98,7 @@ The system performs the following checks and an exception is thrown if:
 
     • The sensorId must correspond to a known, installed sensor. 
     • The timestamp must follow the correct format YYYY-MM-DD HH:MM:SS.
-    • Humidity value is present but the sensor does not support humidity. (The same for temperature)
-    • Both humidity and temperature are missing, it indicates that the sensor is not functioning.
+    • Humidity value is present but the sensor does not support humidity.
+     (The same for temperature)
+    • Both humidity and temperature are missing, it indicates that 
+     the sensor is not functioning.
