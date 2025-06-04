@@ -38,12 +38,13 @@ It is also possible to update or delete a block by the methods `updateArea()` or
 
 R3 - SensorRoom
 --------------
-The method `addSensorToRoom()`, which accepts : (a  sensor Id identifier, the room name, the installation date and a set of capabilites), installs a sensor in an existing classroom.
+The method `addSensorToRoom()`, which accepts : a  sensor Id identifier, the room name, the installation date and a set of capabilites, installs a sensor in an existing classroom.
 
+    •	sensorId is a unique identifier for the sensor device.
 	•	roomName identifies the existing room.
-	•	sensorId is a unique identifier for the sensor device.
 	•	installationDate is the date of installation in YYYY-MM-DD format.
-    •	capabilities is a set of values from the predefined enumeration SensorCapability, indicating whether the sensor supports "TEMPERATURE", "HUMIDITY", or both.
+    •	capabilities is a set of values from the predefined enumeration SensorCapability,
+         indicating whether the sensor supports "TEMPERATURE", "HUMIDITY", or both.
 
 
 If the room does not exist in the control system, an exception is thrown and if the sensorId has already been used in another room, an exception is thrown.
@@ -78,28 +79,24 @@ the method 'getBrokenSensorsNumber()' returns the number of sensors whose mesure
 R5 - Read from file
 --------------------
 
-Method `readLifts()` reads the description of lift types and lift from a text file. 
-The file ought to be organized by lines, each lines starts with a letter indicating the kind of information:
-"T" stands for lift type, while "L" stands for Lift.
-A lift type is described by code, category and seat number. A lift is described by the name and the type code.
-Different data on a line are separated by ";" and possible spaces surrounding the separator are ignored.
+The method readSensorReadings() reads a sequence of sensor readings from a text file.
+Each line represents one measurement from a sensor.
 
-Example:
+Expected line format : 
 
-```
-1232;07/07/1002;;30
-SensorId ; Date;humidity(optional) ; temperature(optional)
-T;S;skilift;1
-L;Fraiteve;S4P
-L;Baby;S
+    • sensorId ; timestamp ; humidity? ; temperature?
 
+    
+   [sensorId: unique identifier of the sensor
+    timestamp: the reading time in YYYY-MM-DD HH:MM:SS format
+    humidity: optional numeric value, may be empty
+    temperature: optional numeric value, may be empty]
+    
 
+Fields are separated by semicolons (;)
+The system performs the following checks and an exception is thrown if: 
 
-
-T ; S4P; seggiovia; 4
-T;S;skilift;1
-L;Fraiteve;S4P
-L;Baby;S
-```
-
-The method must propagate possible IO exceptions and must be able to skip lines not complying with the format (wrong number of data on the line) and continue reading the following lines.
+    • The sensorId must correspond to a known, installed sensor. 
+    • The timestamp must follow the correct format YYYY-MM-DD HH:MM:SS.
+    • Humidity value is present but the sensor does not support humidity. (The same for temperature)
+    • Both humidity and temperature are missing, it indicates that the sensor is not functioning.
