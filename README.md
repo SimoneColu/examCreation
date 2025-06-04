@@ -51,9 +51,19 @@ In addition, method `getSlopesFrom()` accepts the name of a lift and provides a 
 R4 - Measurements
 ------------
 
-Method `createParking()` allows describing a car parking, it accepts the name of the parking and the number of slots.
+Method `getAreaStats()` allows retrieving measurements of temperature and humidity in an area, it accepts the name of the area for which you are computing and returns a map example ('humidity': 100 g/m^3 , 'temperature': 30°) .
 
-The method `getParkingSlots()` accepts the name of a parking and returns the number of slots available in that parking.
+
+The method `getTooHumidRooms(R)` returns a list of rooms for which humidity mean exceed 20 g/m^3 in a given area for more then 2 hours    . (the mean is calculate taking all mesuraments present in a day and calculating the mean)
+
+The method `getTooColdRooms(R)` returns a list of rooms for which temperature mean exceed 30 ° in a given area for more then 4 hours  .
+
+The method 'getFreezingRooms()' returns a list of all rooms in the university where temperature is at least once less then passed parameter today : example( 20).
+
+
+the method 'getBrokenSensorsNumber()' returns the number of sensors whose mesurements doesn't follow
+the method 'activateAC(R) , will activate the ac 
+
 
 It is possible to indicate that a lift departs from a parking by using method `liftServedByParking()` that accepts the name of the lift and the name of the parking. Such method can be invoked several times to add all the lifts that departs from the same parking.
 
@@ -75,6 +85,15 @@ Different data on a line are separated by ";" and possible spaces surrounding th
 Example:
 
 ```
+1232;07/07/1002;;30
+SensorId ; Date;humidity(optional) ; temperature(optional)
+T;S;skilift;1
+L;Fraiteve;S4P
+L;Baby;S
+
+
+
+
 T ; S4P; seggiovia; 4
 T;S;skilift;1
 L;Fraiteve;S4P
