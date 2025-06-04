@@ -24,16 +24,16 @@ The methods `getCode()` and `getName()` of the class Building return the code an
 
 This class also implements `getBuildings()` that returns all the buildings, and it's possible to update and delete buildings with the methods `updateBuilding()` and `deleteBuilding()` of the class `Control`
 
-R2 - Area
+R2 - Block
 ----------
 
-Every Area represents a group of rooms, for example the groups defined by different letters (R,I,T,M,N...)
-The definition of a new area is carried on by method `createArea()` which accepts the building code, the area code, the room groups and a brief description.
+Every Block represents a group of rooms, for example the groups defined by different letters (R,I,T,M,N...)
+The definition of a new block is carried on by method `createArea()` which accepts the building code, the block code, the room groups and a brief description.
 
-The method `getRoomsGroup()` returns the name of the group of classrooms that defines the area.
-Method `getAreas()` returns all the areas of the building.
+The method `getName()` returns the name of the group of classrooms that defines the block.
+Method `getBlocks()` returns all the areas of the building provided.
 
-It is also possible to update or delete an area by the methods `updateArea()` or `deleteArea()` of the class `Building` 
+It is also possible to update or delete a block by the methods `updateArea()` or `deleteArea()`
 
 
 R3 - SensorRoom

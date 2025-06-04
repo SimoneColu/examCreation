@@ -1,17 +1,13 @@
 package it.polito.temperatureControl;
 
-public class Area {
+public class Block {
     
-    
+
     public String getName() {
         return null;
 
     }
-    public void setName(String name) {
 
     
-
-    
-    }
 
 }
