@@ -88,10 +88,10 @@ Expected line format :
     • sensorId ; timestamp ; humidity? ; temperature?
 
     
-   [sensorId: unique identifier of the sensor
-    timestamp: the reading time in YYYY-MM-DD HH:MM:SS format
-    humidity: optional numeric value, may be empty
-    temperature: optional numeric value, may be empty]
+sensorId: unique identifier of the sensor
+timestamp: the reading time in YYYY-MM-DD HH:MM:SS format
+humidity: optional numeric value, may be empty
+temperature: optional numeric value, may be empty
     
 
 Fields are separated by semicolons (;)
