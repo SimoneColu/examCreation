@@ -55,7 +55,6 @@ The method getSensorInfo(String roomName) returns the sensor ID and installation
 The method getAllSensorRooms() returns a collection of room names that have sensors installed.
 
 The method getSensorRoomsInBuilding(String buildingName) returns the list of all sensor-equipped rooms located in the specified building.
-
 If the building is not known, an exception is thrown.
 
 
