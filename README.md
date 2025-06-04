@@ -69,19 +69,10 @@ The method `getTooHumidRooms(R)` returns a list of rooms for which humidity mean
 
 The method `getTooColdRooms(R)` returns a list of rooms for which temperature mean exceed 30 ° in a given area for more then 4 hours  .
 
-The method 'getFreezingRooms()' returns a list of all rooms in the university where temperature is at least once less then passed parameter today : example( 20).
+The method 'getFreezingRooms()' returns a list of all rooms in the university where temperature is at least once today less then passed parameter  : example( 20).
 
 
-the method 'getBrokenSensorsNumber()' returns the number of sensors whose mesurements doesn't follow
-the method 'activateAC(R) , will activate the ac 
-
-
-It is possible to indicate that a lift departs from a parking by using method `liftServedByParking()` that accepts the name of the lift and the name of the parking. Such method can be invoked several times to add all the lifts that departs from the same parking.
-
-The method `servedLifts()` accepts the name of a parking and returns the collection of all lifts served by that parking.
-
-Method `isParkingProportionate()` checks whether the parking size is proportional to the capacity of the lifts departing from
-it, in particular the method returns `true` if the parking size divided by the sum of the seat numbers of the lifts departing from the parking is less than 30.
+the method 'getBrokenSensorsNumber()' returns the number of sensors whose mesurements doesn't follow his capabilities . (for example a sensor that is type humidity but has empty humidity mesurements )
 
 
 R5 - Read from file
