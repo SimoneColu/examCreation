@@ -1,4 +1,4 @@
-Ski Area
+Sensor Control
 ========
 
 Write an application to manage measurements inside a university.
