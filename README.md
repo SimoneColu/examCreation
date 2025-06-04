@@ -38,15 +38,26 @@ It is also possible to update or delete a block by the methods `updateArea()` or
 
 R3 - SensorRoom
 --------------
+The method `addSensorToRoom()`, which accepts : (a  sensor Id identifier, the room name, the installation date and a set of capabilites), installs a sensor in an existing classroom.
 
-Method `createSlope()` allows describing a new ski run, it receives the name of the run, the difficulty ("green", "blue", "red", "black"), and the name of the lift from which the slope starts.
-If the name of the lift is not known, an exception is thrown.
+	•	roomName identifies the existing room.
+	•	sensorId is a unique identifier for the sensor device.
+	•	installationDate is the date of installation in YYYY-MM-DD format.
+    •	capabilities is a set of values from the predefined enumeration SensorCapability, indicating whether the sensor supports "TEMPERATURE", "HUMIDITY", or both.
 
-The methods `getDifficulty()` and `getStartLift()` accept the name of a slope and return the difficulty and name of starting lift respectively.
 
-Method `getSlopes()` of returns the collection of all ski runs.
+If the room does not exist in the control system, an exception is thrown and if the sensorId has already been used in another room, an exception is thrown.
 
-In addition, method `getSlopesFrom()` accepts the name of a lift and provides a list of all ski slopes starting from that lift.
+The method hasSensor(String roomName) returns true if the room has a sensor installed, false otherwise.
+
+The method getSensorInfo(String roomName) returns the sensor ID and installation date for the specified room.
+
+The method getAllSensorRooms() returns a collection of room names that have sensors installed.
+
+The method getSensorRoomsInBuilding(String buildingName) returns the list of all sensor-equipped rooms located in the specified building.
+
+If the building is not known, an exception is thrown.
+
 
 R4 - Measurements
 ------------
@@ -101,6 +112,3 @@ L;Baby;S
 ```
 
 The method must propagate possible IO exceptions and must be able to skip lines not complying with the format (wrong number of data on the line) and continue reading the following lines.
-
-R6 - Stats 
-------------------
