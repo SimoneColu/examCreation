@@ -1,4 +1,4 @@
-Sensor Control
+University Sensors 
 ========
 
 Write an application to manage measurements inside a university.
