@@ -1,5 +1,5 @@
 package it.polito.temperatureControl;
 
-public class InvalidControlException {
+public class InvalidControlException extends Throwable{
 
 }
