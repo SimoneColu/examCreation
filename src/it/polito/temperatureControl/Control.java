@@ -9,7 +9,6 @@ import java.util.*;
  */
 public class Control {
 
-    // Constructor and basic info
 
     /**
      * Creates the control system for a university.

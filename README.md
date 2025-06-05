@@ -50,13 +50,13 @@ The method `addSensorToRoom()`, which accepts : a  sensor Id identifier, the roo
 
 If the room does not exist in the control system, an exception is thrown and if the sensorId has already been used in another room, an exception is thrown.
 
-The method hasSensor(String roomName) returns true if the room has a sensor installed, false otherwise.
+The method `hasSensor(String roomName)`  returns true if the room has a sensor installed, false otherwise.
 
-The method getSensorInfo(String roomName) returns the sensor ID and installation date for the specified room.
+The method `getSensorInfo(String roomName)` returns the sensor ID and installation date for the specified room.
 
-The method getAllSensorRooms() returns a collection of room names that have sensors installed.
+The method `getAllSensorRooms()` returns a collection of room names that have sensors installed.
 
-The method getSensorRoomsInBuilding(String buildingName) returns the list of all sensor-equipped rooms located in the specified building.
+The method `getSensorRoomsInBuilding(String buildingName)` returns the list of all sensor-equipped rooms located in the specified building.
 
 If the building is not known, an exception is thrown.
 
