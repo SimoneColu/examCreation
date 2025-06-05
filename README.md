@@ -69,7 +69,7 @@ Sensor data must be loaded into the system using two separate files:
 This file contains metadata about the sensors and is used to register them into the system.
 Each line in the file must be formatted as follows:
 
-    •   sensorId ; roomName ; installationDate ; capabilities
+    •   sensorId ; roomName ; installationDate ; capabilities;
 
 The method `readSensorInfos(String sensorInfoFile)` must validate that the room exists and ensure that each sensorId is unique.
 An exception is thrown in case of an error.
@@ -79,7 +79,7 @@ An exception is thrown in case of an error.
 This file provides actual sensor measurement data.
 Each line in the file must be formatted as:
 
-    •   sensorId ; timestamp ; humidity? ; temperature?
+    •   sensorId ; timestamp ; humidity? ; temperature?;
 
 timestamp: must follow the format YYYY-MM-DD HH:MM:SS.
 humidity and temperature: optional numeric value (or empty if not provided).
