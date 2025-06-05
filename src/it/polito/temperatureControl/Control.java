@@ -1,266 +1,262 @@
 package it.polito.temperatureControl;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.*;
 
+/**
+ * University Sensors Control System
+ * Manages buildings, blocks, rooms, sensors, and environmental measurements.
+ */
 public class Control {
 
-	/**
-	 * Creates a new building
-	 * 
-	 * @param name name of the new building
-	 */
-	public Control(String name) {
+    // Constructor and basic info
 
-	}
+    /**
+     * Creates the control system for a university.
+     * 
+     * @param universityName name of the university
+     */
+    public Control(String universityName) {
+    }
 
-	/**
-	 * Retrieves the name of the building
-	 * 
-	 * @return name
-	 */
-	public String getName() {
-		return null;
-	}
+    /**
+     * Returns the name of the university.
+     * 
+     * @return university name
+     */
+    public String getName() {
+        return null;
+    }
 
-	/**
-	 * retrieves the category of a given lift type code
-	 * 
-	 * @param typeCode lift type code
-	 * @return the category of the type
-	 * @throws InvalidLiftException if the code has not been defined
-	 */
-	public Building createBuilding(String code, String name, String description) throws InvalidException {
-		return null;
-	}
+    // ======================
+    // R1: Building Management
+    // ======================
 
-	/**
-	 * retrieves the capacity of a given lift type code
-	 * 
-	 * @param typeCode lift type code
-	 * @return the capacity of the type
-	 * @throws InvalidLiftException if the code has not been defined
-	 */
-	public Collection<Building> getBuildings() throws InvalidException {
-		return null;
-	}
+    /**
+     * Adds a new building to the system.
+     * 
+     * @param code        unique building code
+     * @param name        building name
+     * @param description building description
+     * @throws InvalidControlException if building code already exists
+     */
+    public void createBuilding(String code, String name, String description) throws InvalidControlException {
+    }
 
-	public void updateBuilding(String buildingCode, String name, String description) {
+    /**
+     * Returns the list of all building codes.
+     * 
+     * @return list of building codes
+     */
+    public List<String> getBuildings() {
+        return null;
+    }
 
-	}
+    /**
+     * Updates the name and description of a building.
+     * 
+     * @param code         building code
+     * @param newName      new name
+     * @param newDesc      new description
+     * @throws InvalidControlException if building not found
+     */
+    public void updateBuilding(String code, String newName, String newDesc) throws InvalidControlException {
+    }
 
-	public void deleteBuilding(String buildingCode) {
+    /**
+     * Deletes the building with the given code.
+     * 
+     * @param code building code
+     * @throws InvalidControlException if building not found
+     */
+    public void deleteBuilding(String code) throws InvalidControlException {
+    }
 
-	}
+    // =================
+    // R2: Block 
+    // =================
 
-	public Block createBlock(String buildingCode, String blockCode, String name, String description) {
-		return null;
-	}
+    /**
+     * Creates a block inside a building.
+     * 
+     * @param buildingCode building code
+     * @param blockCode    unique block code
+     * @param roomNames    list of room names in the block
+     * @param description  description of the block
+     * @throws InvalidControlException if building is not found or block already exists
+     */
+    public void createBlock(String buildingCode, String blockCode, List<String> roomNames, String description)
+            throws InvalidControlException {
+    }
 
-	public Collection<Block> getBlocks(String buildingCode) {
-		return null;
-	}
+    /**
+     * Returns the list of blocks in the given building.
+     * 
+     * @param buildingCode building code
+     * @return list of block names
+     * @throws InvalidControlException if building not found
+     */
+    public List<String> getBlocks(String buildingCode) throws InvalidControlException {
+        return null;
+    }
 
-	public Block updateBlock(String areacode, String name, String description) {
-		return null;
-	}
+    /**
+     * Updates the area block details.
+     * 
+     * @param blockCode    block code
+     * @param newRooms     new list of room names
+     * @param newDesc      updated description
+     * @throws InvalidControlException if block not found
+     */
+    public void updateBlock(String blockCode, List<String> newRooms, String newDesc) throws InvalidControlException {
+    }
 
-	public Block deleteBlock(String areaCode) {
-		return null;
-	}
+    /**
+     * Deletes a block by its code.
+     * 
+     * @param blockCode block code
+     * @throws InvalidControlException if block not found
+     */
+    public void deleteBlock(String blockCode) throws InvalidControlException {
+    }
 
-	/**
-	 * retrieves the list of lift types
-	 * 
-	 * @return the list of codes
-	 */
-	public Collection<String> types() {
-		return null;
-	}
+    // ===================
+    // R3: Sensor to Room
+    // ===================
 
-	/**
-	 * Creates new lift with given name and type
-	 * 
-	 * @param name     name of the new lift
-	 * @param typeCode type of the lift
-	 * @throws InvalidLiftException in case the lift type is not defined
-	 */
-	public void createLift(String name, String typeCode) throws InvalidException {
+    /**
+     * Installs a sensor in a classroom.
+     * 
+     * @param sensorId         unique sensor ID
+     * @param roomName         room name
+     * @param installationDate date in YYYY-MM-DD format
+     * @param capabilities     sensor capabilities (e.g., TEMPERATURE, HUMIDITY)
+     * @throws InvalidControlException if sensorId already exists or room is unknown
+     */
+    public void addSensorToRoom(String sensorId, String roomName, String installationDate,
+            Set<SensorCapability> capabilities) throws InvalidControlException {
+    }
 
-	}
+    /**
+     * Checks if a room has a sensor.
+     * 
+     * @param roomName room name
+     * @return true if sensor installed
+     */
+    public boolean hasSensor(String roomName) {
+        return false;
+    }
 
-	/**
-	 * Retrieves the type of the given lift
-	 * 
-	 * @param lift name of the lift
-	 * @return type of the lift
-	 */
-	public String getType(String lift) {
-		return null;
-	}
+    /**
+     * Gets sensor info for a room.
+     * 
+     * @param roomName room name
+     * @return sensorId and installation date
+     * @throws InvalidControlException if room not found
+     */
+    public String getSensorInfo(String roomName) throws InvalidControlException {
+        return null;
+    }
 
-	/**
-	 * retrieves the list of lifts defined in the ski area
-	 * 
-	 * @return the list of names sorted alphabetically
-	 */
-	public List<String> getLifts() {
+    /**
+     * Returns all room names with sensors.
+     * 
+     * @return collection of room names
+     */
+    public Collection<String> getAllSensorRooms() {
+        return null;
+    }
 
-		return null;
-	}
+    /**
+     * Returns rooms with sensors in a building.
+     * 
+     * @param buildingName name of the building
+     * @return list of room names
+     * @throws InvalidControlException if building unknown
+     */
+    public List<String> getSensorRoomsInBuilding(String buildingName) throws InvalidControlException {
+        return null;
+    }
 
-	/**
-	 * create a new slope with a given name, difficulty and a starting lift
-	 * 
-	 * @param name       name of the slope
-	 * @param difficulty difficulty
-	 * @param lift       the starting lift for the slope
-	 * @throws InvalidLiftException in case the lift has not been defined
-	 */
-	public void createSlope(String name, String difficulty, String lift) throws InvalidException {
+    // ================
+    // R4: File Reading
+    // ================
 
-	}
+    /**
+     * Reads sensor definitions from a file and installs them in rooms.
+     * (Additional helper method for reading sensor metadata before measurements)
+     * 
+     * @param sensorInfoFile file path with sensor metadata
+     * @throws IOException
+     * @throws InvalidControlException
+     */
+    public void readSensorInfos(String sensorInfoFile) throws IOException, InvalidControlException {
+    }
 
-	/**
-	 * retrieves the name of the slope
-	 * 
-	 * @param slopeName name of the slope
-	 * @return difficulty
-	 */
-	public String getDifficulty(String slopeName) {
-		return null;
-	}
+    /**
+     * Reads sensor readings from a text file.
+     * Each line format: sensorId ; timestamp ; humidity? ; temperature?
+     *
+     * @param sensorReadingFile path to the file
+     * @throws IOException
+     * @throws InvalidControlException if format or sensor capabilities are violated
+     */
+    public void readSensorReadings(String sensorReadingFile) throws IOException, InvalidControlException {
+    }
 
-	/**
-	 * retrieves the start lift
-	 * 
-	 * @param slopeName name of the slope
-	 * @return starting lift
-	 */
-	public String getStartLift(String slopeName) {
-		return null;
-	}
+    // ============================
+    // R5: Measurements & Analysis
+    // ============================
 
-	/**
-	 * retrieves the list of defined slopes
-	 * 
-	 * @return list of slopes
-	 */
-	public Collection<String> getSlopes() {
-		return null;
-	}
+    /**
+     * Returns average temperature and humidity in a block.
+     *
+     * @param areaName name of the block
+     * @return map with keys "temperature" and/or "humidity" and their values
+     * @throws InvalidControlException if block not found
+     */
+    public Map<String, String> getBlockStats(String areaName) throws InvalidControlException {
+        return null;
+    }
 
-	/**
-	 * Retrieves the list of slopes starting from a given lift
-	 * 
-	 * @param lift the starting lift
-	 * @return the list of slopes
-	 */
-	public Collection<String> getSlopesFrom(String lift) {
-		return null;
-	}
+    /**
+     * Returns rooms in a block with high humidity over 2 hours (mean > 20 g/m³).
+     *
+     * @param areaName name of the area
+     * @return list of too humid rooms
+     * @throws InvalidControlException if block not found
+     */
+    public List<String> getTooHumidRooms(String areaName) throws InvalidControlException {
+        return null;
+    }
 
-	/**
-	 * Create a new parking with a given number of slots
-	 * 
-	 * @param name  new parking name
-	 * @param slots slots available in the parking
-	 */
-	public void createParking(String name, int slots) {
+    /**
+     * Returns rooms in a block with temperature > 30°C over 4 hours.
+     *
+     * @param areaName name of the area
+     * @return list of too hot rooms
+     * @throws InvalidControlException if block not found
+     */
+    public List<String> getTooColdRooms(String areaName) throws InvalidControlException {
+        return null;
+    }
 
-	}
+    /**
+     * Returns all rooms with at least one temperature reading today below a threshold.
+     *
+     * @param threshold temperature threshold (°C)
+     * @return list of room names
+     */
+    public List<String> getFreezingRooms(double threshold) {
+        return null;
+    }
 
-	/**
-	 * Retrieves the number of parking slots available in a given parking
-	 * 
-	 * @param parking parking name
-	 * @return number of slots
-	 */
-	public int getParkingSlots(String parking) {
-		return -1;
-	}
-
-	/**
-	 * Define a lift as served by a given parking
-	 * 
-	 * @param lift    lift name
-	 * @param parking parking name
-	 */
-	public void liftServedByParking(String lift, String parking) {
-		
-	}
-
-	/**
-	 * Retrieves the list of lifts served by a parking.
-	 * 
-	 * @param parking parking name
-	 * @return the list of lifts
-	 */
-	public Collection<String> servedLifts(String parking) {
-
-		return null;
-	}
-
-	/**
-	 * Checks whether the parking is proportional to the capacity of the lift it is
-	 * serving.
-	 * A parking is considered proportionate if its size divided by the sum of the
-	 * capacity of the lifts
-	 * served by the parking is less than 30.
-	 * 
-	 * @param parkingName name of the parking to check
-	 * @return true if the parking is proportionate
-	 */
-	public boolean isParkingProportionate(String parkingName) {
-		return false;
-	}
-
-	/**
-	 * reads the description of lift types and lift descriptions from a text file.
-	 * The contains a description per line.
-	 * Each line starts with a letter indicating the kind of information: "T" stands
-	 * for Lift Type,
-	 * while "L" stands for Lift.
-	 * A lift type is described by code, category and seat number.
-	 * A lift is described by the name and the lift type.
-	 * Different data on a line are separated by ";" and possible spaces surrounding
-	 * the separator are ignored.
-	 * If a line contains the wrong number of information it should be skipped and
-	 * the method should continue reading the following lines.
-	 * 
-	 * @param path the path of the file
-	 * @throws IOException          in case IO error
-	 * @throws InvalidLiftException in case of duplicate type or non-existent lift
-	 *                              type
-	 */
-	public void readLifts(String path) throws IOException, InvalidException {
-		List<String> lines;
-		String[] riga;
-		try (
-				BufferedReader br = new BufferedReader(new FileReader(path));) {
-			lines = br.lines().collect(Collectors.toList());
-		} catch (IOException ioe) {
-			System.out.println(ioe);
-			return;
-		}
-
-		for (int i = 0; i < lines.size(); i++) {
-			riga = lines.get(i).trim().split(";");
-			if (riga.length == 4 && (riga[0].compareTo("T") == 0)) {
-				//liftType(riga[1], riga[2], Integer.parseInt(riga[3]));
-			} else if (riga.length == 3 && (riga[0].compareTo("L") == 0)) {
-				createLift(riga[1], riga[2]);
-			}
-		}
-
-	}
-
+    /**
+     * Returns number of broken sensors (those without measurements matching capabilities).
+     *
+     * @return number of broken sensors
+     */
+    public int getBrokenSensorsNumber() {
+        return 0;
+    }
 }
