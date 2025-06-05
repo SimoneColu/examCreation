@@ -96,7 +96,7 @@ Method `getBlockStats()` allows retrieving measurements of temperature and humid
 
 The method `getTooHumidRooms(R)` returns a list of rooms for which humidity mean exceed 20 g/m^3 in a given block for more then 2 hours    . (the mean is calculate taking all mesuraments present in a day and calculating the mean)
 
-The method `getTooColdRooms(R)` returns a list of rooms for which temperature mean exceed 30 ° in a given block for more then 4 hours  .
+The method `getTooHotRooms(R)` returns a list of rooms for which temperature mean exceed 30 ° in a given block for more then 4 hours  .
 
 The method `getFreezingRooms()` returns a list of all rooms in the university where temperature is at least once today less then passed parameter  : example( 20).
 
