@@ -39,6 +39,8 @@ It is also possible to update or delete a block by the methods `updateblock()` o
 
 R3 - SensorRoom
 --------------
+Each room has exactly one sensor.
+
 The method `addSensorToRoom()`, which accepts : a  sensor Id identifier, the room name, the installation date and a set of capabilites, installs a sensor in an existing classroom.
 
     •	sensorId is a unique identifier for the sensor device.
@@ -52,7 +54,8 @@ If the room does not exist in the control system, an exception is thrown and if 
 
 The method `hasSensor(String roomName)`  returns true if the room has a sensor installed, false otherwise.
 
-The method `getSensorInfo(String roomName)` returns the sensor ID and installation date for the specified room.
+The method `getSensorInfo(String roomName)` returns the sensor ID, installation date for the specified room, and the capabiltiies in this format:
+"sensorId_installationDate_capabilites" (e.g B356_1999-09-09_TEMPREATURE_HUMIDITY)
 
 The method `getAllSensorRooms()` returns a collection of room names that have sensors installed.
 
