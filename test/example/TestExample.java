@@ -17,6 +17,7 @@ import org.junit.Test;
 
 import it.polito.temperatureControl.InvalidControlException;
 import it.polito.temperatureControl.Control;
+import it.polito.temperatureControl.SensorCapability;
 
 
 public class TestExample {
@@ -149,5 +150,4 @@ public class TestExample {
             fos.close();
             return f.getAbsolutePath();
     }
-
 }
