@@ -29,12 +29,12 @@ R2 - Block
 ----------
 
 Every Block represents a group of rooms, for example the groups defined by different letters (R,I,T,M,N...)
-The definition of a new block is carried on by method `createblock()` which accepts the building code, the block code, the room groups and a brief description.
+The definition of a new block is carried on by method `createblock()` which accepts the building code, the block code, rooms names in that block and a brief description of the block.
 
 The method `getName()` returns the name of the group of classrooms that defines the block.
 Method `getBlocks()` returns all the blocks of the building provided.
 
-It is also possible to update or delete a block by the methods `updateblock()` or `deleteblock()`
+It is also possible to update or delete a block by the methods `updateblock()` or `deleteblock()`. In updateblock if a room has the same name as a previusly present one in the same block , it should not be added again.
 
 
 R3 - SensorRoom
