@@ -75,44 +75,44 @@ public class TestExample {
         assertEquals("Politecnico di Torino", ctrl.getName());
 
         // Create building
-        ctrl.createBuilding("SC", "Sede Centrale", "Main historical building");
-        ctrl.createBuilding("CDL", "Cittadella", "Engineering campus");
+        ctrl.createBuilding("B01", "Sede Centrale", "Sede centrale measurements");
+        ctrl.createBuilding("B02", "Cittadella", "Cittadella measurements");
 
         List<String> buildings = ctrl.getBuildings();
         assertEquals(2, buildings.size());
-        assertTrue(buildings.contains("SC"));
-        assertTrue(buildings.contains("CDL"));
+        assertTrue(buildings.contains("B01"));
+        assertTrue(buildings.contains("B02"));
 
         // Update building
-        ctrl.updateBuilding("CDL", "New Campus", "Updated description");
+        ctrl.updateBuilding("B01", "Valentino", "Measurements sede del Valentino");
 
         // Delete building
-        ctrl.deleteBuilding("SC");
+        ctrl.deleteBuilding("B02");
 
         buildings = ctrl.getBuildings();
         assertEquals(1, buildings.size());
-        assertTrue(buildings.contains("CDL"));
+        assertTrue(buildings.contains("B01"));
     }
 
     @Test
     public void testBlocksAndRooms() throws InvalidControlException {
         Control ctrl = new Control("UniTest");
 
-        ctrl.createBuilding("BLDG", "Test Building", "A test building");
+        ctrl.createBuilding("B01", "Test Building", "A test building");
 
         List<String> roomNames = Arrays.asList("R1", "R2", "R3");
-        ctrl.createBlock("BLDG", "BlockA", roomNames, "Block with 3 rooms");
+        ctrl.createBlock("B01", "R", roomNames, "Block R classrooms");
 
-        List<String> blocks = ctrl.getBlocks("BLDG");
+        List<String> blocks = ctrl.getBlocks("B01");
         assertEquals(1, blocks.size());
-        assertTrue(blocks.contains("BlockA"));
+        assertTrue(blocks.contains("R"));
     }
 
     @Test
     public void testSensorInstallation() throws InvalidControlException {
         Control ctrl = new Control("Sensor Uni");
 
-        ctrl.createBuilding("B1", "Building 1", "B1 Desc");
+        ctrl.createBuilding("B01", "Building 1", "B1 Desc");
         List<String> rooms = Arrays.asList("RoomA", "RoomB");
         ctrl.createBlock("B1", "Block1", rooms, "Block with rooms");
 
@@ -135,10 +135,7 @@ public class TestExample {
         assertEquals(1, sensorRoomsInBuilding.size());
         assertTrue(sensorRoomsInBuilding.contains("RoomA"));
     }
- 
- 
 
-    
     /**
      * Create a new temporary file and write the content
      * @param content content of the file
