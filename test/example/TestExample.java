@@ -22,53 +22,7 @@ import it.polito.temperatureControl.SensorCapability;
 
 public class TestExample {
 
-    /* @Test
-    public void testAll() throws InvalidControlException, IOException {
-        
-        Control vl = new Control("Politecnico Di Torino");
-        
-        assertEquals("Via Lattea", vl.getName());
-
-        vl.liftType("S4P","Seggiovia",4);
-        
-        assertEquals(4, vl.getCapacity("S4P"));
-        
-        vl.createLift("Frateive", "S4P");
-        
-        assertEquals("S4P", vl.getType("Frateive"));
-
-        vl.createSlope("79", "red", "Frateive");
-        vl.createSlope("Rio Nero", "black", "Frateive");
-        
-        assertEquals("red", vl.getDifficulty("79"));
-        assertEquals(2, vl.getSlopesFrom("Frateive").size());
-                
-        vl.createParking("Jouvenceaux", 100);
-        
-        assertEquals(100, vl.getParkingSlots("Jouvenceaux"));
-       
-        vl.liftServedByParking("Frateive", "Jouvenceaux");
-        
-        Collection<String> l = vl.servedLifts("Jouvenceaux");
-        
-        assertNotNull(l);
-        assertEquals(1, l.size());
-        assertTrue(l.contains("Frateive"));
-        
-        assertTrue(vl.isParkingProportionate("Jouvenceaux"));
-
-        String path = writeFile(
-        		"T;S2;Chairlift;2\n" +
-        		"L;Cime Bianche;S2"
-        		);
-        
-        vl.readLifts(path);
-        
-        assertEquals(2, vl.getCapacity("S2"));
-        assertEquals("S2", vl.getType("Cime Bianche"));
-    }
- */
-
+  
   @Test
     public void testBuildingAndBlocks() throws InvalidControlException {
         Control ctrl = new Control("Politecnico di Torino");
