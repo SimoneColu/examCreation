@@ -135,7 +135,6 @@ public class Control {
     public void addSensorToRoom(String sensorId, String roomName, String installationDate,
             Set<SensorCapability> capabilities) throws InvalidControlException {
     }
-
     /**
      * Checks if a room has a sensor.
      * 
